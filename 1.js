@@ -3,7 +3,7 @@
  */
 class EventBus {
   constructor() {
-    this.listeners = {};
+    //this.listeners = {};
   }
 
   /**
@@ -25,7 +25,7 @@ class EventBus {
     if (!this.listeners[event]) return;
 
     for (let listener of this.listeners[event]) {
-      listener(data);
+      listener(data);  //TODO:  
     }
   }
 }

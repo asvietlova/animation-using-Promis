@@ -1,0 +1,63 @@
+#myContainer {
+  width: 700px;
+  height: 700px;
+  position: relative;
+  background-color: antiquewhite;
+}
+#myContainer img {
+  height: 200px;
+  width: 200px;
+  position: relative;
+  top: 40%;
+  left: 40%;
+  /* display: none; */
+  visibility: hidden;
+}
+
+#greenBallAnimation {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  background-color: rgb(0, 128, 0);
+  border-radius: 50%;
+  top: 1px;
+}
+#blueBallAnimation {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  background-color: rgb(0, 0, 225);
+  border-radius: 50%;
+}
+#redBallAnimation {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  background-color: rgb(255, 0, 0);
+  border-radius: 50%;
+  left: 1px;
+}
+.conteinerForBall {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  border: 1px solid;
+  border-radius: 50%;
+  text-align: center;
+}
+.green {
+  left: 599px;
+}
+.green p,
+.blue p,
+.red p {
+  padding-top: 20px;
+  font-weight: 600;
+}
+.blue {
+  left: 599px;
+  top: 599px;
+}
+.red {
+  top: 599px;
+}
