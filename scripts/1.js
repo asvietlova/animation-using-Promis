@@ -3,7 +3,7 @@
  */
 class EventBus {
   constructor() {
-    //this.listeners = {};
+    this.listeners = {};
   }
 
   /**
@@ -25,7 +25,12 @@ class EventBus {
     if (!this.listeners[event]) return;
 
     for (let listener of this.listeners[event]) {
-      listener(data);  //TODO:  
+      //listener(data);  
+      try {
+          listener(data);
+      } catch (e) {
+        console.error(`Catched error ${e}`)
+      }
     }
   }
 }
@@ -40,6 +45,7 @@ const eventBus = new EventBus();
 eventBus.on('stateUpdated', (state) => {
   console.log('first state listener'); // first state listener
   console.log(state); // { newState: 'is here' }
+  // throw new Error('Error')
 });
 
 eventBus.on('stateUpdated', (state) => {
@@ -59,3 +65,5 @@ eventBus.on('foo', () => {
 eventBus.emit('stateUpdated', { newState: 'is here' });
 eventBus.emit('requestFulfilled', { request: 'data' });
 eventBus.emit('bar', { foo: 'bar' });
+
+module.exports = EventBus;
